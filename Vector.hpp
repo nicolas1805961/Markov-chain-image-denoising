@@ -48,6 +48,7 @@ public:
     friend Vector operator*(float scalar, Vector const& rhs);
     friend Vector operator*(Vector const& lhs, Vector const& rhs);
     friend bool operator==(Vector const &left, float right);
+    friend bool operator<(Vector const &left, Vector const &right);
     friend bool operator!=(Vector const &left, Vector const &right);
     //friend Vector operator+(Vector lhs, Vector const& rhs);
     friend Vector operator*(Vector const& lhs, float scalar);

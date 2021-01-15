@@ -6,16 +6,16 @@ Image::Image(std::string const& filename, Rand& random)
     int channels;
     unsigned char *image_char = stbi_load(filename.c_str(), &width, &height, &channels, 1);
 
-    y = std::vector<std::vector<float>>(height, std::vector<float>(width));
-    x = std::vector<std::vector<float>>(height, std::vector<float>(width));
+    image = std::vector<std::vector<float>>(height, std::vector<float>(width));
+    //x = std::vector<std::vector<float>>(height, std::vector<float>(width));
 
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            y[i][j] = static_cast<float>(image_char[width * i + j]) / 255.0;
+            image[i][j] = static_cast<float>(image_char[width * i + j]) / 255.0;
             //x[i][j] = random.rand();
-            x[i][j] = random.rand_cluster();
+            //x[i][j] = random.rand_cluster();
         }
     }
 
@@ -32,15 +32,15 @@ int Image::get_height()
     return height;
 }
 
-std::vector<std::vector<float>> Image::get_y() 
+std::vector<std::vector<float>> Image::get_image() 
 {
-    return y;
+    return image;
 }
 
-std::vector<std::vector<float>> Image::get_x() 
+/*std::vector<std::vector<float>> Image::get_x() 
 {
     return x;
-}
+}*/
 
 Image::~Image()
 {

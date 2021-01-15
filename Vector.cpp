@@ -205,6 +205,11 @@ bool operator==(Vector const &left, float right)
     return (left.x == right && left.y == right && left.z == right);
 }
 
+bool operator<(Vector const &left, Vector const &right)
+{
+    return left.norm() < right.norm();
+}
+
 Vector& Vector::operator*=(float rhs)
 {
     x *= rhs;

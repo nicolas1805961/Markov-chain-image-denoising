@@ -11,16 +11,16 @@ class Image
 private:
     int width;
     int height;
-    std::vector<std::vector<float>> y;
-    std::vector<std::vector<float>> x;
+    std::vector<std::vector<float>> image;
+    //std::vector<std::vector<float>> x;
 
 
 public:
-    Image(std::string const &filename, Rand &random);
+    Image(std::string const &clearedImage, Rand &random);
     int get_width();
     int get_height();
-    std::vector<std::vector<float>> get_y();
-    std::vector<std::vector<float>> get_x();
+    std::vector<std::vector<float>> get_image();
+    //std::vector<std::vector<float>> get_x();
     ~Image();
 };
 
